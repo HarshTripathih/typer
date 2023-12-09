@@ -1,0 +1,23 @@
+// Check if m is greater than n
+    if (m > n) {
+        return -1;
+    }
+    
+    int count = 0;
+    for (int i = m; i <= n; i++) {
+        int num = i;
+        bool valid = true;
+        while (num > 0) {
+            int digit = num % 10;
+            if (digit != 1 && digit != 4 && digit != 9) {
+                valid = false;
+                break;
+            }
+            num /= 10;
+        }
+        if (valid) {
+            count++;
+        }
+    }
+    
+    return count;
